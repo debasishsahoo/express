@@ -6,5 +6,5 @@ router.post('/', NewsCtrl.create)
 router.put('/:id', NewsCtrl.edit)
 router.delete('/:id', NewsCtrl.delete)
 router.get('/', NewsCtrl.viewAll)
-router.get('/:id', NewsCtrl.viewById)
+router.get('/:id', NewsCtrl.view)
 module.exports = router;

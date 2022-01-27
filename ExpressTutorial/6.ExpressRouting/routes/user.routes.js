@@ -11,3 +11,10 @@ router.delete('/:id', UserCtrl.delete)
 
 module.exports = router;
 
+//127.0.0.1:7000/user/signup ---post
+//127.0.0.1:7000/user/signin ---post
+//127.0.0.1:7000/user/1023  ---post
+//127.0.0.1:7000/user/1  ---get
+//127.0.0.1:7000/user/1  ---patch
+//127.0.0.1:7000/user/1  ---delete
+

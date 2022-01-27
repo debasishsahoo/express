@@ -10,6 +10,25 @@
   "author": "debasishsahoo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2"
+    "@hapi/hapi": "^20.2.1",
+    "bcryptjs": "^2.4.3",
+    "commander": "^8.3.0",
+    "cors": "^2.8.5",
+    "dot-env": "0.0.1",
+    "express": "^4.17.2",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "karma": "^6.3.12",
+    "mongoose": "^6.1.8",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "pm2": "^5.1.2",
+    "socket.io": "^4.4.1",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0",
+    "underscore": "^1.13.2",
+    "uuid": "^8.3.2"
   }
 }

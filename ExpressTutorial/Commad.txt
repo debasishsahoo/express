@@ -1,5 +1,6 @@
 npm i -g express(-g Global Install)
 npm i express(Local install)
+npm install swagger-jsdoc swagger-ui-express
 
 PINTEREST 
 

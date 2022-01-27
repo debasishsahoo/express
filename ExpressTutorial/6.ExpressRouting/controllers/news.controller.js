@@ -12,7 +12,7 @@ const NewsCtrl = {
     delete: async (req, res) => {
         res.send('from delete')
     },
-    viewById: async (req, res) => {
+    view: async (req, res) => {
         res.send('from viewById')
     },
     blockNews: async (req, res) => {
