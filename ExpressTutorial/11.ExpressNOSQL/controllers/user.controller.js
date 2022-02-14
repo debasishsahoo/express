@@ -1,7 +1,12 @@
-
+const UserModel = require('../models/user.model')
 const UserCtrl = {
     signup: async (req, res) => {
-        res.send('from Signup')
+        const { name, email, password, mobile } = req.body;
+        const result = await UserModel.create({ name, email, password, mobile });
+        res.status(201).json({
+            message: "Sucessfully Register",
+            result: result
+        });
     },
     signin: async (req, res) => {
         res.send('from signin')

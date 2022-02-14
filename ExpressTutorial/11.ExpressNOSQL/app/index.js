@@ -1,9 +1,17 @@
 const express = require('express');
-const app = express();
-const PORT = 7000;
+const cors = require('cors');
+const dotenv = require('dotenv')
+const dbconnect = require('../DB/MongoDb.Connect')
 const UserRoutes = require('../routes/user.routes')
 const NewsRoutes = require('../routes/news.routes')
 const AdminRoutes = require('../routes/admin.routes')
+
+dotenv.config();
+const PORT = process.env.PORT
+
+const app = express();
+app.use(express.json())
+app.use(cors())
 
 //Application root routing
 app.use('/user', UserRoutes);
@@ -16,16 +24,15 @@ app.use('*', (req, res) => {
 });
 
 
-const SERVER = app.listen(PORT, () => {
-    const HOST = SERVER.address().address
-    console.log(`Backend Server is Connected at http://${HOST}:${PORT}`);
-});
 
-//serverURL:127.0.0.1:7000
-//Application Path:  1./user,2./news,3./admin
+if (dbconnect) {
+    const SERVER = app.listen(PORT, () => {
+        const HOST = SERVER.address().address
+        console.log(`Backend Server is Connected at http://${HOST}:${PORT}`);
+    })
+} else {
+    console.error('Database Connection Error');
+}
 
 
-//So my Application URL is 3
-//127.0.0.1:7000/user/
-//127.0.0.1:7000/news/
-//127.0.0.1:7000/admin/
+
