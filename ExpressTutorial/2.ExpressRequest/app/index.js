@@ -132,10 +132,7 @@ app.get('/product/query', (req, res) => {
     res.status(200).json(SortedData);
 })
 
-app.get('/product/search', (req, res) => {
-    const { search } = req.query
-    res.status(200).json(search);
-})
+
 
 
 

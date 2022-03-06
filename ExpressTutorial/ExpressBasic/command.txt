@@ -1,0 +1,48 @@
+FIRST STEP 
+npm init -y
+
+SECOND STEP 
+MKDIR APP        
+MKDIR CONTROLLERS
+MKDIR MODELS
+MKDIR ROUTES 
+MKDIR MIDDLEWARES
+MKDIR DB 
+MKDIR ERRORS 
+MKDIR UTILITIES
+MKDIR PUBLIC 
+MKDIR LOG
+
+THIRD STEP 
+CREATE .gitignore FILE 
+CREATE .env FILE 
+
+CMD
+copy con .gitignore
+copy con .env
+
+BASH
+touch .gitignore
+touch .env
+
+
+//pakage we needed
+we need this package every time when we do Express project
+  express, cors, mongoose, dotenv, bcryptjs, jsonwebtoken, 
+
+and also we need dev Dependincy for our projects like 
+   nodemon
+
+we need extra http Package for Smoothnes 
+   express-async-errors, express-rate-limit, rate-limit, http-status-code
+
+we need security package 
+helmet,xss-clean,
+
+log and documention package 
+joi,morgan,yamljs,swagger-ui-express
+
+
+
+
+
