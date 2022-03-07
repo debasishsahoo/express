@@ -21,10 +21,7 @@ const SignUp = async (req, res, next) => {
         })
     }
 
-    const OldUser = await UserModel.findOne({ useremail })
-    
-    console.log(OldUser)
-
+    const OldUser = await UserModel.findOne({ email: useremail })
     if (OldUser) {
         return res.status(406).json({
             message: 'Eamil Already Exist'
@@ -42,15 +39,44 @@ const SignUp = async (req, res, next) => {
             result: err
         })
     }
+}
+const SignIn = async (req, res, next) => {
+    const {
+        body: { email, password }
+    } = req;
+    console.log('req:', req)
+
+    if (email === '' || password === '') {
+        return res.status(400).json({
+            message: 'Please Provide Proper Data'
+        })
+    }
+    const OldUser = await UserModel.findOne({ email: email })
+    console.log('OldUser:', OldUser)
+
+    if (!OldUser) {
+        return res.status(406).json({
+            message: 'User Dose Not Exist'
+        })
+    }
+
+
+    const isPasswordCorrect = OldUser.passowrd === password ? true : false;
 
 
 
-
-
-
+    if (isPasswordCorrect === false) {
+        return res.status(401).json({
+            message: 'Invlaid Password'
+        })
+    }
+    res.status(200).json({
+        success: true,
+        message: 'Sucessfully Loging',
+        result: OldUser
+    });
 
 }
-const SignIn = async () => { }
 const PasswordChange = async () => { }
 
 module.exports = {
